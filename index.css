@@ -1,0 +1,205 @@
+:root{
+  --bg:#008080;
+  --panel:#c0c0c0;
+  --titlebar:#000080;
+  --titlebar-text:#fff;
+  --window-border:#000;
+  --shadow: rgba(0,0,0,0.35);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html,body{
+  height:40%;
+  margin:0;
+  background:url('https://riberasalud.com/blog-de-salud/wp-content/uploads/2021/03/top-view-on-hands-holding-prostate-cancer-ribbon-colon-cancer-concept-blue-ribbon-symbol-black-and-white.jpg') no-repeat center center fixed;
+  background-size:cover;
+  color:#000;
+  cursor:url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto;
+}
+.desktop{padding:24px;display:flex;flex-wrap:wrap;gap:18px;}
+.icon{
+  width:90px;                /* más espacio para el texto */
+  text-align:center;
+  color:#fff;
+  font-size:14px;            /* letras más grandes */
+  cursor:pointer;
+  animation:fadeIn 1s ease-in;
+}
+.icon img{
+  width:64px;                /* iconos más grandes */
+  height:64px;
+  display:block;
+  margin:0 auto 6px;
+  transition:filter 0.3s;
+}
+.icon:hover img{filter:brightness(1.4);}
+.taskbar{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  height:40px;
+  background:var(--panel);
+  border-top:2px solid #fff;
+  border-bottom:2px solid #404040;
+  display:flex;
+  align-items:center;
+  padding:4px 6px;
+  box-sizing:border-box
+}
+.start{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:linear-gradient(#e0e0e0,#c8c8c8);
+  border:2px solid #fff;
+  padding:4px 8px;
+  border-radius:2px;
+  cursor:pointer;
+  transition:transform 0.1s;
+}
+.start:active{transform:translateY(1px)}
+.task-buttons{flex:1;display:flex;gap:6px;padding-left:8px}
+.clock{min-width:80px;text-align:center;font-size:12px}
+.window{
+  position:absolute;
+  width:540px;
+  background:var(--panel);
+  border:2px solid var(--window-border);
+  box-shadow:4px 4px 0px var(--shadow);
+  display:none;
+  animation:zoomIn 0.25s ease-out;
+}
+.titlebar{
+  height:28px;
+  background:linear-gradient(var(--titlebar),#000080);
+  color:var(--titlebar-text);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6px;
+  box-sizing:border-box;
+  border-bottom:2px solid #fff;
+  cursor:move
+}
+.titlebar .title{font-weight:bold}
+.titlebar .controls{display:flex;gap:4px}
+.titlebar .btn{
+  width:20px;
+  height:18px;
+  background:linear-gradient(#c0c0c0,#909090);
+  border:2px solid #404040;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  cursor:pointer;
+  user-select:none
+}
+.window .content{
+  padding:12px;
+  background:#fff;
+  height:360px;
+  max-height:360px;
+  overflow-y:auto;
+  font-size:15px;            /* texto más grande */
+  line-height:1.5;
+}
+.statusbar{
+  height:22px;
+  background:linear-gradient(#e8e8e8,#cfcfcf);
+  border-top:2px solid #fff;
+  padding:3px 6px;
+  box-sizing:border-box;
+  font-size:12px
+}
+.btn-98{
+  display:inline-block;
+  padding:4px 8px;
+  border:2px solid #fff;
+  background:linear-gradient(#e0e0e0,#bdbdbd);
+  box-shadow:1px 1px #404040;
+  cursor:pointer;
+  margin:4px;
+  transition:transform 0.1s;
+}
+.btn-98:active{transform:scale(0.95);} 
+img.content-img{
+  max-width:100%;
+  height:auto;
+  margin:6px 0;
+  border:2px solid #000;
+  display:block;
+}
+.progress-container{
+  width:100%;
+  height:20px;
+  border:2px inset #fff;
+  background:#dcdcdc;
+  margin-top:6px
+}
+.progress-bar{
+  height:100%;
+  width:0;
+  background:#000080;
+  color:#fff;
+  font-size:12px;
+  text-align:center;
+  line-height:18px;
+  transition:width 1s ease-in-out;
+}
+.embedded-iframe{width:100%;height:100%;border:0}
+.big-book{width:100%;height:100%}
+
+/* Justificar textos en ventanas específicas */
+#win-concepto .content p,
+#win-concepto .content ul,
+#win-receta .content p,
+#win-receta .content ul,
+#win-recursos .content p,
+#win-recursos .content ul,
+#win-cita .content p,
+#win-cita .content ul {
+  text-align: justify;
+}
+
+#boot-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+  .desktop {
+    padding: 12px;
+    gap: 12px;
+    justify-content: center;
+  }
+  .icon {
+    width: 72px;
+    font-size: 12px;
+  }
+  .icon img {
+    width: 48px;
+    height: 48px;
+  }
+  .window {
+    width: 95% !important;
+    left: 2.5% !important;
+    top: 10% !important;
+    height: auto;
+    max-height: 80%;
+  }
+  .window .content {
+    font-size: 14px;
+    height: auto;
+    max-height: 60vh;
+  }
+  .taskbar {
+    height: 32px;
+  }
+  .clock {
+    font-size: 11px;
+  }
+}
+
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes zoomIn{from{transform:scale(0.8);opacity:0;}to{transform:scale(1);opacity:1;}}
