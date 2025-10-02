@@ -160,12 +160,6 @@ img.content-img{
   text-align: justify;
 }
 
-#boot-screen video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* Ajustes responsivos para móviles */
 @media (max-width: 768px) {
   .desktop {
